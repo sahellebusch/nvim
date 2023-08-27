@@ -11,11 +11,11 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
-       { import = "lazyvim.plugins.extras.lang.typescript" },
-       { import = "lazyvim.plugins.extras.lang.json" },
-       { import = "lazyvim.plugins.extras.ui.mini-animate" },
-       --{ import/override with your plugins },
-       { import = "plugins" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    --{ import/override with your plugins },
+    { import = "plugins" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -40,6 +40,23 @@ require("lazy").setup({
         "tohtml",
         "tutor",
         "zipPlugin",
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = { eslint = {} },
+      setup = {
+        eslint = function()
+          require("lazyvim.util").on_attach(function(client)
+            if client.name == "eslint" then
+              client.server_capabilities.documentFormattingProvider = true
+            elseif client.name == "tsserver" then
+              client.server_capabilities.documentFormattingProvider = false
+            end
+          end)
+        end,
       },
     },
   },
