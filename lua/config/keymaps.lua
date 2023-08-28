@@ -2,4 +2,23 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Exit insert mode using 'jk'
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
+
+-- Normal Mode Bindings
+vim.keymap.set("n", "<C-f>", "<Right>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-b>", "<Left>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-e>", "<End>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-a>", "<Home>", { noremap = true, silent = true })
+
+-- Insert Mode Bindings
+vim.keymap.set("i", "<C-f>", "<Right>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-b>", "<Left>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-e>", "<End>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-a>", "<Home>", { noremap = true, silent = true })
+
+-- Visual mode bindings
+vim.keymap.set("v", "<C-f>", "<Right>", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-b>", "<Left>", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-e>", "<End>", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-a>", "<Home>", { noremap = true, silent = true })
