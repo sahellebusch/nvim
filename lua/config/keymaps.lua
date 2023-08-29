@@ -22,3 +22,10 @@ vim.keymap.set("v", "<C-f>", "<Right>", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-b>", "<Left>", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-e>", "<End>", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-a>", "<Home>", { noremap = true, silent = true })
+
+-- Select all text in the buffer with Meta (Alt) + a
+vim.keymap.set("n", "<M-a>", "ggVG", { noremap = true, silent = true })
+
+-- Get back my old emacs deleteion behavior
+vim.keymap.set("n", "<C-d>", "x", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-d>", "<Del>", { noremap = true, silent = true })

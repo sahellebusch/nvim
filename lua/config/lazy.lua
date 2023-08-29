@@ -16,6 +16,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
     --{ import/override with your plugins },
     { import = "lazyvim.plugins.extras.editor.leap" },
+    { import = "lazyvim.plugins.extras.test.core" },
+    { import = "lazyvim.plugins.extras.dap.core" },
     { import = "plugins" },
   },
   defaults = {
@@ -61,7 +63,7 @@ require("lazy").setup({
       },
     },
   },
-  { "shaunsingh/nord.nvim" },
+  { "arcticicestudio/nord-nvim" },
   {
     "catppuccin/nvim",
     lazy = true,
@@ -98,4 +100,5 @@ require("lazy").setup({
       },
     },
   },
+  {},
 })
